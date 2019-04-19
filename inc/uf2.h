@@ -266,6 +266,16 @@ void system_init(void);
 
 #define PINOP(pin, OP) (PORT->Group[(pin) / 32].OP.reg = (1 << ((pin) % 32)))
 
+/* START: Button Activated Bootloader as proposed by "stevenj" */
+
+#define PINIP(pin) (((PORT->Group[(pin) / 32].IN.reg) >> ((pin) % 32)) & 0x1)
+#define PINCFG(pin) (PORT->Group[(pin) / 32].PINCFG[(pin) % 32].reg)
+#define PINMUX(pin) (PORT->Group[(pin) / 32].PMUX[((pin) % 32)/2].reg)
+
+/* END OF: Button Activated Bootloader */
+
+
+
 void led_tick(void);
 void led_signal(void);
 void led_init(void);

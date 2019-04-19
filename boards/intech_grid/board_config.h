@@ -25,4 +25,14 @@
 #define BOOT_GCLK_ID_SLOW                 SERCOM0_GCLK_ID_SLOW
 
 
+/* START: Button Activated Bootloader */
+
+#define HOLD_PIN PIN_PC11
+
+#define HOLD_STATE 0
+
+/* END OF: Button Activated Bootloader */
+
+
+
 #endif

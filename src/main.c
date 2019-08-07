@@ -115,6 +115,9 @@ static void check_start_application(void) {
     #endif
         PINCFG(HOLD_PIN) = pincfg.reg;
 
+	// Short delay, this allows debouncing filter caps to charge
+	delay(20);
+
         if (PINIP(HOLD_PIN) == HOLD_STATE) {
             /* Stay in bootloader */
             return;

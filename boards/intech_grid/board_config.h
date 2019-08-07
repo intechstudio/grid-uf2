@@ -2,8 +2,8 @@
 #define BOARD_CONFIG_H
 
 #define VENDOR_NAME "Intech Studio"
-#define PRODUCT_NAME "Grid"
-#define VOLUME_LABEL "Grid-FW"
+#define PRODUCT_NAME "Bootloader 20190807"
+#define VOLUME_LABEL "GRID"
 
 #define INDEX_URL "https://github.com/intechstudio/grid-fw/"
 

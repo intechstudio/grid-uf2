@@ -30,6 +30,7 @@
 #define HOLD_PIN PIN_PC11
 
 #define HOLD_STATE 0
+#define HOLD_PIN_PULLUP
 
 /* END OF: Button Activated Bootloader */
 

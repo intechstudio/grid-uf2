@@ -126,6 +126,7 @@ static void check_start_application(void) {
 
     /* END OF: Button Activated Bootloader */
 
+
     /* Load the Reset Handler address of the application */
     app_start_address = *(uint32_t *)(APP_START_ADDRESS + 4);
 
@@ -196,6 +197,29 @@ int main(void) {
     // Delay a bit so SWD programmer can have time to attach.
     delay(15);
 #endif
+
+    /* START OF: Intech LED Power Enable */
+
+    #if defined(BOARD_NEOPIXEL_ENABLE_PIN)
+
+        PORT_PINCFG_Type pincfg2 = {0};
+        pincfg2.bit.PMUXEN = false;
+        pincfg2.bit.INEN   = true;
+        pincfg2.bit.DRVSTR = true;
+
+    PINOP(BOARD_NEOPIXEL_ENABLE_PIN, DIRSET);        // Pin is an output
+    PINOP(BOARD_NEOPIXEL_ENABLE_PIN, OUTSET);
+
+        //PINOP(BOARD_NEOPIXEL_ENABLE_PIN, DIRCLR);  // Pin is an input
+        //pincfg2.bit.PULLEN = true;
+        //PINOP(BOARD_NEOPIXEL_ENABLE_PIN, OUTSET); // Pin is pulled up.
+
+        PINCFG(BOARD_NEOPIXEL_ENABLE_PIN) = pincfg2.reg;
+
+    #endif	
+
+    /* END OF: Intech LED Power Enable */
+
     led_init();
 
     logmsg("Start");

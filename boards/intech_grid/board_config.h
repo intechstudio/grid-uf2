@@ -2,7 +2,7 @@
 #define BOARD_CONFIG_H
 
 #define VENDOR_NAME "Intech Studio"
-#define PRODUCT_NAME "Bootloader 20190807"
+#define PRODUCT_NAME "Bootloader 20191211"
 #define VOLUME_LABEL "GRID"
 
 #define INDEX_URL "https://github.com/intechstudio/grid-fw/"
@@ -23,6 +23,19 @@
 
 #define BOOT_GCLK_ID_CORE                 SERCOM0_GCLK_ID_CORE
 #define BOOT_GCLK_ID_SLOW                 SERCOM0_GCLK_ID_SLOW
+
+
+
+/* START: NEOPIXEL LED MAGIC*/
+
+//#define LED_PIN PIN_PB30
+
+#define BOARD_NEOPIXEL_PIN PIN_PB30
+#define BOARD_NEOPIXEL_COUNT 16
+
+
+#define BOARD_NEOPIXEL_ENABLE_PIN PIN_PC14
+
 
 
 /* START: Button Activated Bootloader */
